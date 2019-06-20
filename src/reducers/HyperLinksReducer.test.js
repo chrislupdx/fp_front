@@ -1,7 +1,7 @@
 import reducer from './HyperLinksReducer';
 import {
   FETCH_HYPERLINKS,
-} from '../actions/fetchHyperLinks';
+} from '../actions/fetchHyperLinksaction';
 
 describe('hyperlinks reducer tests', () => {
   it('handles the fetch links reducer', () => {

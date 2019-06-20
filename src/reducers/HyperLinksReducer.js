@@ -2,7 +2,7 @@ import {
   FETCH_HYPERLINKS,
   FETCH_HYPERLINKS_PENDING,
   FETCH_HYPERLINKS_ERROR
-} from '../actions/fetchHyperLinks';
+} from '../actions/fetchHyperLinksaction';
 
 const initialState = {
   loading: false,
