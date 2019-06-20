@@ -19,10 +19,8 @@ class HyperLinkListContainer extends PureComponent {
 
   render() {
     const { hyperlinkList, loading } = this.props;
-    console.log(this.props);
     if(loading) return <h1>loading</h1>;
     return <List hyperlinks={hyperlinkList} />;
-    // return <p>{hyperlinkList}</p>;
   }
 }
 
