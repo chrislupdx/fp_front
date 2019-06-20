@@ -1,5 +1,5 @@
 import { createAction } from 'promise-middleware-redux';
-import getHyperLinks  from '../services/LinksApi';
+import { getHyperLinks } from '../services/LinksApi';
 
 export const [
   fetchHyperLinks,
