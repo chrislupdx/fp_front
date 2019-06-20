@@ -1,9 +1,9 @@
 import React from 'react';
-import LinkListContainer from '../containers/LinkListContainer';
+import HyperLinkListContainer from '../containers/HyperLinkListContainer';
 
 
 export default function App() {
   return (
-    <LinkListContainer />
+    <HyperLinkListContainer />
   );
 }
