@@ -1,7 +1,8 @@
 import reducer from './HyperLinksReducer';
-import {
-  FETCH_HYPERLINKS
-} from '../actions/fetchHyperLinksAction';
+import { FETCH_HYPERLINKS } from '../actions/fetchHyperLinksAction';
+import { POST_HYPERLINK } from '../actions/postHyperLinksAction';
+
+jest.mock('../services/LinksApi.js');
 
 describe('hyperlinks reducer tests', () => {
   it('handles the fetch links reducer', () => {
@@ -22,5 +23,22 @@ describe('hyperlinks reducer tests', () => {
       error: null
     });
   });
-})
-;
+  it('handles the post links reducer', () => {
+    const initialState = {
+      loading: true,
+      hyperlinkList: [],
+    };
+
+    const newState = reducer(initialState, {
+      type: POST_HYPERLINK,
+      payload: { 'url' : 'less cheese' }
+    });
+
+    expect(newState).toEqual({
+      loading: false,
+      hyperlinkList: [{ url: 'less cheese' }]
+    });
+
+  });
+
+});
