@@ -1,3 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App component renders App 1`] = `<HyperLinkListContainer />`;
+exports[`App component renders App 1`] = `
+<BrowserRouter>
+  <Link
+    to="/"
+  >
+    Home
+  </Link>
+  <Switch>
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(HyperLinkListContainer)",
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/"
+    />
+  </Switch>
+</BrowserRouter>
+`;
