@@ -8,4 +8,3 @@ export const [
   _,
   FETCH_HYPERLINKS_ERROR
 ] = createAction('FETCH_HYPERLINKS', getHyperLinks);
-

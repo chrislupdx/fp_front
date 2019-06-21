@@ -2,7 +2,7 @@ import {
   fetchHyperLinks,
   FETCH_HYPERLINKS,
   FETCH_HYPERLINKS_PENDING,
-} from './fetchHyperLinksaction';
+} from '../actions/fetchHyperLinksAction';
 
 jest.mock('../services/LinksApi.js', () => ({
   getHyperLinks() {
