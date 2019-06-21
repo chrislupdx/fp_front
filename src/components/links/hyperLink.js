@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 function HyperLink({ hyperLink }) {
   return (
     <section>
-      <p>{hyperLink.url}</p>
+      <Link to={`/${hyperLink._id}`}>
+        <p>{hyperLink.url}</p>
+      </Link>
     </section>
   );
 }
