@@ -31,7 +31,7 @@ class CreateLinkContainer extends PureComponent {
           onSubmit={this.handleSubmit}
           onChange={this.handleChange}
           url={url}
-          submitText="Compress Url"
+          submitText="Add Url"
         />
       );
     }

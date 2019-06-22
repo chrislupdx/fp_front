@@ -18,7 +18,7 @@ LinkForm.propTypes = {
 };
 
 LinkForm.defaultProps = {
-  submitText: 'Compress Url'
+  submitText: 'Add Url'
 };
 
 export default LinkForm;

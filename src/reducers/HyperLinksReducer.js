@@ -4,7 +4,7 @@ import {
   FETCH_HYPERLINKS_ERROR,
 } from '../actions/fetchHyperLinksAction';
 
-import { 
+import {
   POST_HYPERLINK,
   POST_HYPERLINK_PENDING,
   POST_HYPERLINK_ERROR
