@@ -4,7 +4,7 @@ import {
 } from '../actions/fetchbyIdAction';
 
 const initialState = {
-  hyperlink: null,
+  hyperlink: {},
   loading: null,
   error: null
 };
