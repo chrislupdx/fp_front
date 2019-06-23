@@ -8,7 +8,7 @@ import { fetchHyperLinkById } from '../actions/fetchbyIdAction';
 class LinkById extends PureComponent {
     static propTypes = {
       fetch: PropTypes.func.isRequired,
-      // url: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
       match: PropTypes.object.isRequired
     }
 
