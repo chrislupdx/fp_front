@@ -9,3 +9,6 @@ export const createHyperLink = () =>  {
 export const getLinkById = () => {
   Promise.resolve({});
 };
+export const deleteLinkById = () => {
+  Promise.resolve();
+};
