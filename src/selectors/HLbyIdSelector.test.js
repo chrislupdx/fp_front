@@ -1,15 +1,14 @@
-import { HyperLinkByIDS } from '../selectors/HLbyIdSelector';
+import { HyperLinkByID } from '../selectors/HLbyIdSelector';
 
 describe('by id selector', () => {
-  //renders a url
   it('gets url', () => {
     const state = {
-      hyperlinkbyid: {
+      hyperlinks: {
         hyperlink: {
           url: 'poop'
         }
       } };
-    expect(HyperLinkByIDS(state)).toEqual({ url: 'poop' }
+    expect(HyperLinkByID(state)).toEqual({ url: 'poop' }
     
     );
   });
