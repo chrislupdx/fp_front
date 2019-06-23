@@ -1,6 +1,6 @@
 import reducer from './LinksByIdReducer';
 import {
-  FETCH_HYPERLINKS_BY_ID,
+  FETCH_HYPERLINK_BY_ID,
 } from '../actions/fetchbyIdAction.js';
 
 jest.mock('../services/LinksApi.js');
@@ -14,7 +14,7 @@ describe('handles links by id reducers', () => {
     };
 
     const newState = reducer(initialState, {
-      type: FETCH_HYPERLINKS_BY_ID,
+      type: FETCH_HYPERLINK_BY_ID,
       payload: '5d0d27868fc6bd00174500ac'
     });
 
