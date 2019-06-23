@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { HyperLinkByIDS } from '../selectors/HLbyIdSelector';
+import { HyperLinkByID } from '../selectors/HLbyIdSelector';
 import LinkDetail from '../components/links/LinkDetail';
 import { fetchHyperLinkById } from '../actions/fetchbyIdAction';
 
@@ -23,7 +23,7 @@ class LinkById extends PureComponent {
 }
 
 const mapStateToProps = state => ({
-  url: HyperLinkByIDS(state)
+  url: HyperLinkByID(state)
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
