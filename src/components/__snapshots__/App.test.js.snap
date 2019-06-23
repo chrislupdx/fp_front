@@ -14,10 +14,14 @@ exports[`App component renders App 1`] = `
           "$$typeof": Symbol(react.memo),
           "WrappedComponent": [Function],
           "compare": null,
-          "displayName": "Connect(HyperLinkListContainer)",
+          "displayName": "Connect(LinkById)",
           "type": [Function],
         }
       }
+      path="/:id"
+    />
+    <Route
+      component={[Function]}
       exact={true}
       path="/"
     />
