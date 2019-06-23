@@ -4,13 +4,15 @@ import { connect } from 'react-redux';
 import { getHyperLinksList, getHyperLinksLoading, getHyperLinksError } from '../selectors/HyperLinksSelector';
 import { fetchHyperLinks } from '../actions/fetchHyperLinksAction';
 import List from '../components/links/List';
+import { deleteHyperLinkById } from '../actions/deleteByIdAction';
 
 class HyperLinkListContainer extends PureComponent {
   static propTypes = {
     fetch: PropTypes.func.isRequired,
     hyperlinkList: PropTypes.array.isRequired,
     loading: PropTypes.bool.isRequired,
-    error: PropTypes.object
+    error: PropTypes.object,
+    deleteHyperLinkById: PropTypes.func.isRequired
   }
 
   componentDidMount() {
@@ -18,9 +20,9 @@ class HyperLinkListContainer extends PureComponent {
   }
 
   render() {
-    const { hyperlinkList, loading } = this.props;
+    const { hyperlinkList, loading, deleteHyperLinkById } = this.props;
     if(loading) return <h1>loading</h1>;
-    return <List hyperlinks={hyperlinkList} />;
+    return <List hyperlinks={hyperlinkList} deleteHyperLinkById={deleteHyperLinkById} />;
   }
 }
 
@@ -33,6 +35,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   fetch() {
     dispatch(fetchHyperLinks());
+  }, deleteHyperLinkById(id) {
+    dispatch(deleteHyperLinkById(id));
   }
 });
 
