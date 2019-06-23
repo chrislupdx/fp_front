@@ -1,6 +1,7 @@
 import reducer from './HyperLinksReducer';
 import { FETCH_HYPERLINKS } from '../actions/fetchHyperLinksAction';
 import { POST_HYPERLINK } from '../actions/postHyperLinksAction';
+import { FETCH_HYPERLINK_BY_ID } from '../actions/fetchbyIdAction.js';
 
 jest.mock('../services/LinksApi.js');
 
@@ -40,5 +41,28 @@ describe('hyperlinks reducer tests', () => {
     });
 
   });
+
+});
+
+describe('handles links by id reducers', () => {
+  it('handles the fetch links by id reducer', () => {
+    const initialState = {
+      hyperlink: null,
+      loading: null,
+      error: null
+    };
+
+    const newState = reducer(initialState, {
+      type: FETCH_HYPERLINK_BY_ID,
+      payload: '5d0d27868fc6bd00174500ac'
+    });
+
+    expect(newState).toEqual({
+      loading: false,
+      hyperlink: expect.anything(),
+      error: null
+    });
+  });
+
 
 });

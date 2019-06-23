@@ -5,14 +5,20 @@ import {
 } from '../actions/fetchHyperLinksAction';
 
 import {
+  FETCH_HYPERLINK_BY_ID,
+  FETCH_HYPERLINK_BY_ID_PENDING
+} from '../actions/fetchbyIdAction';
+
+import {
   POST_HYPERLINK,
   POST_HYPERLINK_PENDING,
   POST_HYPERLINK_ERROR
 } from '../actions/postHyperLinksAction';
 
 const initialState = {
-  loading: false,
   hyperlinkList: [],
+  hyperlink: {},
+  loading: false,
   error: null
 };
 
@@ -30,6 +36,10 @@ export default function reducer(state = initialState, action) {
       return { ...state, error: null, loading: false, hyperlinkList: action.payload };
     case FETCH_HYPERLINKS_ERROR:
       return { ...state, loading: false, error: action.payload };
+    case FETCH_HYPERLINK_BY_ID:
+      return { ...state, hyperlink: action.payload, loading: false };
+    case FETCH_HYPERLINK_BY_ID_PENDING:
+      return { ...state, loading: true };
     default:
       return state;
   }

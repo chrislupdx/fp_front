@@ -1,3 +1,3 @@
-export const HyperLinkByIDState = state => state.hyperlinkbyid;
+export const HyperLinkByIDState = state => state.hyperlinks;
 
 export const HyperLinkByIDS = state => HyperLinkByIDState(state).hyperlink;
