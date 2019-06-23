@@ -2,6 +2,7 @@ import reducer from './HyperLinksReducer';
 import { FETCH_HYPERLINKS } from '../actions/fetchHyperLinksAction';
 import { POST_HYPERLINK } from '../actions/postHyperLinksAction';
 import { FETCH_HYPERLINK_BY_ID } from '../actions/fetchbyIdAction.js';
+import { DELETE_HYPERLINK_BY_ID } from '../actions/deleteByIdAction';
 
 jest.mock('../services/LinksApi.js');
 
@@ -45,7 +46,7 @@ describe('hyperlinks reducer tests', () => {
 });
 
 describe('handles links by id reducers', () => {
-  it('handles the fetch links by id reducer', () => {
+  it.skip('handles the fetch links by id reducer', () => {
     const initialState = {
       hyperlink: null,
       loading: null,
@@ -64,5 +65,30 @@ describe('handles links by id reducers', () => {
     });
   });
 
+});
+
+describe('handles the deletes by id reducer', () => {
+  it.skip('reducer handles the deletebyid action', () => {
+    const initialState = {
+      hyperlinkList: [
+        { _id: '111', url: 'uno mas' },
+        { _id: '222', url: 'ohnoo' },
+      ]
+    };
+    const newState = reducer(initialState, {
+      type: DELETE_HYPERLINK_BY_ID,
+      payload: '222'
+    });
+
+    expect(newState).toEqual(
+      [
+        { _id: '111', url: 'uno mas' },
+        { _id: '222', url: 'ohnoo' },
+      ]
+    );
+
+
+    
+  });
 
 });

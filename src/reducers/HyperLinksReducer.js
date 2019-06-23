@@ -15,6 +15,12 @@ import {
   POST_HYPERLINK_ERROR
 } from '../actions/postHyperLinksAction';
 
+import {
+  DELETE_HYPERLINK_BY_ID,
+  DELETE_HYPERLINK_BY_ID_PENDING,
+  DELETE_HYPERLINK_BY_ID_ERROR
+} from '../actions/deleteByIdAction';
+
 const initialState = {
   hyperlinkList: [],
   hyperlink: {},
@@ -40,6 +46,11 @@ export default function reducer(state = initialState, action) {
       return { ...state, hyperlink: action.payload, loading: false };
     case FETCH_HYPERLINK_BY_ID_PENDING:
       return { ...state, loading: true };
+    case DELETE_HYPERLINK_BY_ID:
+      return [
+        ...state.hyperlinkList.slice(0, action.payload),
+        ...state.hyperlinkList.slice(action.payload + 1)
+      ];
     default:
       return state;
   }
