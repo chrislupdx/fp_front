@@ -60,7 +60,7 @@ describe('handles links by id reducers', () => {
 
     expect(newState).toEqual({
       loading: false,
-      hyperlink: expect.anything(),
+      hyperlink: '5d0d27868fc6bd00174500ac',
       error: null
     });
   });
@@ -68,6 +68,7 @@ describe('handles links by id reducers', () => {
 });
 
 describe('handles the deletes by id reducer', () => {
+  //lowercase words pls
   it.skip('reducer handles the deletebyid action', () => {
     const initialState = {
       hyperlinkList: [

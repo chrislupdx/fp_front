@@ -17,7 +17,6 @@ import {
 
 import {
   DELETE_HYPERLINK_BY_ID,
-  DELETE_HYPERLINK_BY_ID_PENDING,
   DELETE_HYPERLINK_BY_ID_ERROR
 } from '../actions/deleteByIdAction';
 
@@ -47,10 +46,12 @@ export default function reducer(state = initialState, action) {
     case FETCH_HYPERLINK_BY_ID_PENDING:
       return { ...state, loading: true };
     case DELETE_HYPERLINK_BY_ID:
-      return [
+      return { ...state, hyperlinkList: [
         ...state.hyperlinkList.slice(0, action.payload),
         ...state.hyperlinkList.slice(action.payload + 1)
-      ];
+      ] };
+    case DELETE_HYPERLINK_BY_ID_ERROR:
+      return { ...state, loading: false, error: action.payload };
     default:
       return state;
   }
