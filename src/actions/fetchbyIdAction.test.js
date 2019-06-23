@@ -1,7 +1,5 @@
 import { 
-  fetchHyperLinkById,
-  FETCH_HYPERLINKBYID,
-  FETCH_HYPERLINKBYID_PENDING,
+  fetchHyperLinkById
 } from '../actions/fetchbyIdAction';
 
 jest.mock('../services/LinksApi.js', () => ({
@@ -13,8 +11,8 @@ jest.mock('../services/LinksApi.js', () => ({
 describe('by id actions', () => {
   it('fetches a list of hyperlinks and dispatches an action', () => {
     expect(fetchHyperLinkById()).toEqual({
-      type: FETCH_HYPERLINKBYID,
-      pendingType: FETCH_HYPERLINKBYID_PENDING,
+      type: 'FETCH_HYPERLINKBYID',
+      pendingType: 'FETCH_HYPERLINKBYID_PENDING',
       payload: expect.any(Promise),
       fulfilledType: 'FETCH_HYPERLINKBYID_FULFILLED',
       rejectedType: 'FETCH_HYPERLINKBYID_REJECTED'
