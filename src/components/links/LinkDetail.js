@@ -1,20 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function LinkDetail({ link }) {
+function LinkDetail({ hyperlink }) {
   const {
-    url
-  } = link;
+    url,
+    name
+  } = hyperlink;
 
   return (
     <section>
-      <p>{url}</p>
+      <p>Url: {url}</p>
+      <p>Name: {name}</p>
     </section>
   );
 }
 
 LinkDetail.propTypes = {
-  link: PropTypes.object.isRequired
+  hyperlink: PropTypes.object.isRequired
 };
 
 export default LinkDetail;

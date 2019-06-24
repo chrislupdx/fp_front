@@ -8,7 +8,8 @@ import { fetchHyperLinkById } from '../actions/fetchbyIdAction';
 class LinkById extends PureComponent {
     static propTypes = {
       fetch: PropTypes.func.isRequired,
-      url: PropTypes.string.isRequired,
+      hyperlink: PropTypes.object.isRequired,
+      name: PropTypes.string,
       match: PropTypes.object.isRequired
     }
 
@@ -17,13 +18,13 @@ class LinkById extends PureComponent {
     }
 
     render() {
-      const { url } = this.props;
-      return <LinkDetail link ={url} />;
+      const { hyperlink } = this.props;
+      return <LinkDetail hyperlink = {hyperlink} />;
     }
 }
 
 const mapStateToProps = state => ({
-  url: HyperLinkByID(state)
+  hyperlink: HyperLinkByID(state)
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
