@@ -10,14 +10,22 @@ class CreateLinkContainer extends PureComponent {
     }
 
     state = {
-      url: ''
+      url: '',
+      name: '',
     }
 
     handleSubmit = event => {
       event.preventDefault();
-      const { url } = this.state;
-      this.props.CreateLink({ url });
-      this.setState({ url: '' });
+      const {
+        url,
+        name } = this.state;
+      this.props.CreateLink({
+        url,
+        name });
+
+      this.setState({
+        url: '',
+        name: '' });
     }
 
     handleChange = ({ target }) => {
@@ -25,12 +33,15 @@ class CreateLinkContainer extends PureComponent {
     }
 
     render() {
-      const { url } = this.state;
+      const { url,
+        name } = this.state;
+
       return (
         <LinkForm
           onSubmit={this.handleSubmit}
           onChange={this.handleChange}
           url={url}
+          name={name}
           submitText="Add Url"
         />
       );
