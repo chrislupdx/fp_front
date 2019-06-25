@@ -5,6 +5,7 @@ import { getHyperLinksList, getHyperLinksLoading, getHyperLinksError } from '../
 import { fetchHyperLinks } from '../actions/fetchHyperLinksAction';
 import List from '../components/links/List';
 import { deleteHyperLinkById } from '../actions/deleteByIdAction';
+import deleteDispatch from '../Utils/deleteDispatch';
 
 class HyperLinkListContainer extends PureComponent {
   static propTypes = {
@@ -12,7 +13,8 @@ class HyperLinkListContainer extends PureComponent {
     hyperlinkList: PropTypes.array.isRequired,
     loading: PropTypes.bool.isRequired,
     error: PropTypes.object,
-    deleteHyperLinkById: PropTypes.func.isRequired
+    deleteHyperLinkById: PropTypes.func,
+    deleteDispatch: PropTypes.func
   }
 
   componentDidMount() {
@@ -20,9 +22,9 @@ class HyperLinkListContainer extends PureComponent {
   }
 
   render() {
-    const { hyperlinkList, loading, deleteHyperLinkById } = this.props;
+    const { hyperlinkList, loading, deleteDispatch } = this.props;
     if(loading) return <h1>loading</h1>;
-    return <List hyperlinks={hyperlinkList} deleteHyperLinkById={deleteHyperLinkById} />;
+    return <List hyperlinks={hyperlinkList} deleteDispatch={deleteDispatch} />;
   }
 }
 
@@ -35,9 +37,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   fetch() {
     dispatch(fetchHyperLinks());
-  }, deleteHyperLinkById(id) {
-    dispatch(deleteHyperLinkById(id));
-  }
+  }, 
+  bananba: () => deleteDispatch(id);
+  
 });
 
 export default connect(

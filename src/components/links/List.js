@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Hyperlink from './hyperLink';
 
-function List({ hyperlinks, deleteHyperLinkById }) {
+function List({ hyperlinks, deleteDispatch }) {
   const hyperlinkList = hyperlinks.map(link => (
     <li key={link._id}>
-      <Hyperlink deleteHyperLinkById={deleteHyperLinkById} hyperLink={link} />
+      <Hyperlink deleteDispatch={deleteDispatch} hyperLink={link} />
     </li>
   ));
 
@@ -17,7 +17,7 @@ function List({ hyperlinks, deleteHyperLinkById }) {
 }
 
 List.propTypes = {
-  deleteHyperLinkById: PropTypes.func.isRequired,
+  deleteDispatch: PropTypes.func.isRequired,
   hyperlinks: PropTypes.arrayOf(PropTypes.shape({
     _id: PropTypes.string.isRequired,
   })).isRequired
