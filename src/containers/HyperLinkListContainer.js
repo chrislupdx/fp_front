@@ -9,7 +9,7 @@ import { deleteHyperLinkById } from '../actions/deleteByIdAction';
 class HyperLinkListContainer extends PureComponent {
   static propTypes = {
     fetch: PropTypes.func.isRequired,
-    hyperlinkList: PropTypes.array.isRequired,
+    hyperlinkList: PropTypes.object.isRequired,
     loading: PropTypes.bool.isRequired,
     error: PropTypes.object,
     deleteHyperLinkById: PropTypes.func.isRequired
@@ -39,6 +39,8 @@ const mapDispatchToProps = dispatch => ({
     dispatch(deleteHyperLinkById(id));
   }
 });
+
+
 
 export default connect(
   mapStateToProps,

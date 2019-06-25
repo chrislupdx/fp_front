@@ -5,7 +5,7 @@ import CreateLinkContainer from '../containers/CreateLinkContainer';
 export default function Home() {
   return (
     <>
-      <CreateLinkContainer />
+      {/* <CreateLinkContainer /> */}
       <HyperLinkListContainer />
     </>
   );

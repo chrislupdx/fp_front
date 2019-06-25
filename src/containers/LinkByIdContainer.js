@@ -9,7 +9,7 @@ class LinkById extends PureComponent {
     static propTypes = {
       fetch: PropTypes.func.isRequired,
       hyperlink: PropTypes.object.isRequired,
-      name: PropTypes.string,
+      // name: PropTypes.string,
       match: PropTypes.object.isRequired
     }
 

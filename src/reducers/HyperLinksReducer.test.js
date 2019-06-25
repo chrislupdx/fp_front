@@ -46,7 +46,7 @@ describe('hyperlinks reducer tests', () => {
 });
 
 describe('handles links by id reducers', () => {
-  it.skip('handles the fetch links by id reducer', () => {
+  it('handles the fetch links by id reducer', () => {
     const initialState = {
       hyperlink: null,
       loading: null,
@@ -69,7 +69,7 @@ describe('handles links by id reducers', () => {
 
 describe('handles the deletes by id reducer', () => {
   //lowercase words pls
-  it.skip('reducer handles the deletebyid action', () => {
+  it('reducer handles the deletebyid action', () => {
     const initialState = {
       hyperlinkList: [
         { _id: '111', url: 'uno mas' },

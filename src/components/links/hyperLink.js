@@ -13,6 +13,7 @@ function HyperLink({ hyperLink, deleteHyperLinkById }) {
     </section>
   );
 }
+//so the way that hyperlink is going ot recieve info is going to be fundamnetally different after the rework
 
 HyperLink.propTypes = {
   deleteHyperLinkById: PropTypes.func.isRequired,

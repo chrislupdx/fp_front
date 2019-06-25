@@ -15,12 +15,13 @@ function List({ hyperlinks, deleteHyperLinkById }) {
     </ul>
   );
 }
+//the way that list recieves information is going to be fundamentally different afte rthe rework
 
 List.propTypes = {
-  deleteHyperLinkById: PropTypes.func.isRequired,
-  hyperlinks: PropTypes.arrayOf(PropTypes.shape({
-    _id: PropTypes.string.isRequired,
-  })).isRequired
+  deleteHyperLinkById: PropTypes.func,
+  hyperlinks: PropTypes.objectOf(PropTypes.shape({
+    _id: PropTypes.string,
+  }))
 };
 
 export default List;
