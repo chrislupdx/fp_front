@@ -7,6 +7,7 @@ function HyperLink({ hyperLink, deleteHyperLinkById }) {
   return (
     <section>
       <Link to={`/${hyperLink._id}`}>
+        <p>{hyperLink.name}</p>
         <p>{hyperLink.url}</p>
       </Link>
       <FaTrashAlt onClick={deleteHyperLinkById.bind(null, hyperLink._id)} />

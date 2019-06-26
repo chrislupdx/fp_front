@@ -4,8 +4,10 @@ import PropTypes from 'prop-types';
 function LinkForm({ onSubmit, onChange, url, name, submitText }) {
   return (
     <form onSubmit={onSubmit}>
-      <input name="url" value={url} onChange={onChange} />
+      <span>Name:</span>
       <input name="name" value={name} onChange={onChange} />
+      <span>Url:</span>
+      <input name="url" value={url} onChange={onChange} />
       <button>{submitText}</button>
     </form>
   );
