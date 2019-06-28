@@ -20,6 +20,12 @@ import {
   DELETE_HYPERLINK_BY_ID_ERROR
 } from '../actions/deleteByIdAction';
 
+import {
+  PATCH_HYPERLINK,
+  PATCH_HYPERLINK_ERROR,
+  PATCH_HYPERLINK_PENDING
+} from '../actions/patchByIDAction';
+
 const initialState = {
   hyperlinkList: [],
   hyperlink: {},
@@ -46,8 +52,14 @@ export default function reducer(state = initialState, action) {
     case FETCH_HYPERLINK_BY_ID_PENDING:
       return { ...state, loading: true };
     case DELETE_HYPERLINK_BY_ID:
-      return { ...state };
+      return { ...state, loading: false };
     case DELETE_HYPERLINK_BY_ID_ERROR:
+      return { ...state, loading: false, error: action.payload };
+    case PATCH_HYPERLINK:
+      return { ...state, loading: false, hyperlink: action.payload };
+    case PATCH_HYPERLINK_PENDING:
+      return { ...state, loading: true };
+    case PATCH_HYPERLINK_ERROR:
       return { ...state, loading: false, error: action.payload };
     default:
       return state;

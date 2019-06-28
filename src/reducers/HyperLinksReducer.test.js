@@ -3,8 +3,31 @@ import { FETCH_HYPERLINKS } from '../actions/fetchHyperLinksAction';
 import { POST_HYPERLINK } from '../actions/postHyperLinksAction';
 import { FETCH_HYPERLINK_BY_ID } from '../actions/fetchbyIdAction.js';
 import { DELETE_HYPERLINK_BY_ID } from '../actions/deleteByIdAction';
+import { PATCH_HYPERLINK } from '../actions/patchByIDAction';
 
 jest.mock('../services/LinksApi.js');
+
+describe('handles links by id reducers', () => {
+  it('handles the fetch links by id reducer', () => {
+    const initialState = {
+      hyperlink: null,
+      loading: null,
+      error: null
+    };
+
+    const newState = reducer(initialState, {
+      type: FETCH_HYPERLINK_BY_ID,
+      payload: '5d0d27868fc6bd00174500ac'
+    });
+
+    expect(newState).toEqual({
+      loading: false,
+      hyperlink: '5d0d27868fc6bd00174500ac',
+      error: null
+    });
+  });
+
+});
 
 describe('hyperlinks reducer tests', () => {
   it('handles the fetch links reducer', () => {
@@ -33,7 +56,7 @@ describe('hyperlinks reducer tests', () => {
 
     const newState = reducer(initialState, {
       type: POST_HYPERLINK,
-      payload: { 'url' : 'less cheese' }
+      payload: { 'url': 'less cheese' }
     });
 
     expect(newState).toEqual({
@@ -41,28 +64,6 @@ describe('hyperlinks reducer tests', () => {
       hyperlinkList: [{ url: 'less cheese' }]
     });
 
-  });
-
-});
-
-describe('handles links by id reducers', () => {
-  it.skip('handles the fetch links by id reducer', () => {
-    const initialState = {
-      hyperlink: null,
-      loading: null,
-      error: null
-    };
-
-    const newState = reducer(initialState, {
-      type: FETCH_HYPERLINK_BY_ID,
-      payload: '5d0d27868fc6bd00174500ac'
-    });
-
-    expect(newState).toEqual({
-      loading: false,
-      hyperlink: '5d0d27868fc6bd00174500ac',
-      error: null
-    });
   });
 
 });
@@ -87,9 +88,30 @@ describe('handles the deletes by id reducer', () => {
         { _id: '222', url: 'ohnoo' },
       ]
     );
-
-
-    
   });
-
 });
+
+describe('handles the patch by id reducer', () => {
+  it('can handle patchbyid action', () => {
+    const payload = {
+      name: 'oldname',
+      url: 'url.com',
+    };
+
+    const initialState = {
+      loading: true,
+      hyperlink: payload
+    };
+
+    const newState = reducer(initialState, {
+      type: PATCH_HYPERLINK,
+      payload: { ...payload, name: 'name' }
+    });
+
+    expect(newState).toEqual({
+      loading: false,
+      hyperlink: { ...payload, name: 'name' }
+    });
+  });
+});
+
