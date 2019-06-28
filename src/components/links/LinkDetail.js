@@ -13,7 +13,7 @@ function LinkDetail({ hyperlink }) {
       <p>Url: {url}</p>
       <p>Name: {name}</p>
       <p>Shortened Url: {`${process.env.API_URL}`}{hashedUrl}</p>
-      <a href={`${process.env.API_URL}${{ hashedUrl }}`}>Click here</a>
+      {/* <a href={`${process.env.API_URL}${{ hashedUrl }}`}>Click here</a> */}
     </section>
   );
 }

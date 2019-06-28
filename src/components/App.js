@@ -6,15 +6,14 @@ import {
   Link
 } from 'react-router-dom';
 import Home from '../components/Home';
-import LinksById from '../containers/LinkByIdContainer';
-
+import LinkById from '../containers/LinkByIdContainer';
 
 export default function App() {
   return (
     <Router>
       <Link to="/">Home</Link>
       <Switch>
-        <Route path="/:id" component={LinksById} />
+        <Route path="/:id" component={LinkById} />
         <Route exact path ="/" component ={Home} />
       </Switch>
     </Router>
