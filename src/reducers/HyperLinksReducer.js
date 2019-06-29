@@ -52,7 +52,7 @@ export default function reducer(state = initialState, action) {
     case FETCH_HYPERLINK_BY_ID_PENDING:
       return { ...state, loading: true };
     case DELETE_HYPERLINK_BY_ID:
-      return { ...state, loading: false };
+      return { ...state, loading: false, hyperlinkList: [...state.hyperlinkList.filter(url => url._id !== action.payload._id)] };
     case DELETE_HYPERLINK_BY_ID_ERROR:
       return { ...state, loading: false, error: action.payload };
     case PATCH_HYPERLINK:

@@ -19,6 +19,13 @@ class HyperLinkListContainer extends PureComponent {
     this.props.fetch();
   }
 
+  componentDidUpdate(prevProps) {
+    if(this.props.hyperlinkList.length !== prevProps.hyperlinkList.length) {
+      this.props.fetch();
+    }
+  }
+
+
   render() {
     const { hyperlinkList, loading, deleteHyperLinkById } = this.props;
     if(loading) return <h1>loading</h1>;
