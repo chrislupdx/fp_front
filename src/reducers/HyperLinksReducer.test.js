@@ -70,7 +70,7 @@ describe('hyperlinks reducer tests', () => {
 
 describe('handles the deletes by id reducer', () => {
   //lowercase words pls
-  it.skip('reducer handles the deletebyid action', () => {
+  it('reducer handles the deletebyid action', () => {
     const initialState = {
       hyperlinkList: [
         { _id: '111', url: 'uno mas' },
@@ -83,10 +83,9 @@ describe('handles the deletes by id reducer', () => {
     });
 
     expect(newState).toEqual(
-      [
-        { _id: '111', url: 'uno mas' },
-        { _id: '222', url: 'ohnoo' },
-      ]
+      { hyperlinkList: [
+      ],
+      loading: false }
     );
   });
 });
