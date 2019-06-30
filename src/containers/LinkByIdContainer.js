@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { HyperLinkByID } from '../selectors/HLbyIdSelector';
 import LinkDetail from '../components/links/LinkDetail';
+import EditHyperLink from '../containers/EditHyperLink'
 import { fetchHyperLinkById } from '../actions/fetchbyIdAction';
 
 class LinkById extends PureComponent {
@@ -19,7 +20,12 @@ class LinkById extends PureComponent {
 
     render() {
       const { hyperlink } = this.props;
-      return <LinkDetail hyperlink = {hyperlink} />;
+      return (
+        <>
+        <LinkDetail hyperlink = {hyperlink} />
+        <EditHyperLink />
+        </>
+      );
     }
 }
 
