@@ -9,7 +9,6 @@ import EditForm from '../components/links/editForm';
 class EditHyperLink extends PureComponent {
     static propTypes = {
       editHl: PropTypes.func,
-
       name: PropTypes.string,
       url: PropTypes.string
     }
@@ -26,18 +25,19 @@ class EditHyperLink extends PureComponent {
       });
     }
 
-      handleSubmit = event => {
-        event.preventDefault();
-        const {
-          url,
-          name
-        } = this.state;
+    handleSubmit = event => {
+      event.preventDefault();
+      const {
+        url,
+        name
+      } = this.state;
 
-        this.props.editHl({
-          name,
-          url
-        });
-      }
+      this.props.editHl({
+        name,
+        url
+      });
+
+    }
 
     handleChange = ({ target }) => {
       this.setState({ [target.name]: target.value });
@@ -48,7 +48,6 @@ class EditHyperLink extends PureComponent {
         name,
         url
       } = this.state;
-
       return (
         <EditForm
           onSubmit={this.handleSubmit} onChange={this.handleChange}
@@ -69,8 +68,8 @@ const mapDispatchToProps = (dispatch, { match }) => ({
   }
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(EditHyperLink);
+)(EditHyperLink));
 

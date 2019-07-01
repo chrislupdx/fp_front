@@ -16,8 +16,10 @@ function EditForm({ onChange, onSubmit, submitText, url, name }) {
 }
 
 EditForm.propTypes = {
-  onChange : PropTypes.func,
-  onSubmit : PropTypes.func,
+  onChange : PropTypes.func.isRequired,
+  onSubmit : PropTypes.func.isRequired,
+  submitText: PropTypes.string,
+
   url: PropTypes.string,
   name: PropTypes.string
 };

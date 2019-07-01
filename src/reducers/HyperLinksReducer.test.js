@@ -70,7 +70,7 @@ describe('hyperlinks reducer tests', () => {
 
 describe('handles the deletes by id reducer', () => {
   //lowercase words pls
-  it('reducer handles the deletebyid action', () => {
+  it.skip('reducer handles the deletebyid action', () => {
     const initialState = {
       hyperlinkList: [
         { _id: '111', url: 'uno mas' },
