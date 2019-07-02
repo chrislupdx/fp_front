@@ -4,6 +4,7 @@ import { POST_HYPERLINK } from '../actions/postHyperLinksAction';
 import { FETCH_HYPERLINK_BY_ID } from '../actions/fetchbyIdAction.js';
 import { DELETE_HYPERLINK_BY_ID } from '../actions/deleteByIdAction';
 import { PATCH_HYPERLINK } from '../actions/patchByIDAction';
+import { deleteHyperLinkById } from '../actions/deleteByIdAction';
 
 jest.mock('../services/LinksApi.js');
 
@@ -70,7 +71,7 @@ describe('hyperlinks reducer tests', () => {
 
 describe('handles the deletes by id reducer', () => {
   //lowercase words pls
-  it.skip('reducer handles the deletebyid action', () => {
+  it('reducer handles the deletebyid action', () => {
     const initialState = {
       hyperlinkList: [
         { _id: '111', url: 'uno mas' },
@@ -79,12 +80,12 @@ describe('handles the deletes by id reducer', () => {
     };
     const newState = reducer(initialState, {
       type: DELETE_HYPERLINK_BY_ID,
-      payload: '222'
-      //we feed the _id into the url, payload would do nothing
+      payload: { _id: '222' }
     });
 
     expect(newState).toEqual(
       { hyperlinkList: [
+        { _id: '111', url: 'uno mas' }
       ],
       loading: false }
     );
