@@ -10,8 +10,9 @@ class LinkById extends PureComponent {
     static propTypes = {
       fetch: PropTypes.func.isRequired,
       hyperlink: PropTypes.object.isRequired,
+      _id: PropTypes.string,
       name: PropTypes.string,
-      match: PropTypes.object.isRequired
+      match: PropTypes.object.isRequired,
     }
 
     componentDidMount() {
@@ -23,7 +24,10 @@ class LinkById extends PureComponent {
       return (
         <>
           <LinkDetail hyperlink = {hyperlink} />
-          <EditLinkContainer />
+          <EditLinkContainer 
+            id ={this.props.match.params.id} 
+            match={this.props.match} 
+          />
         </>
       );
     }
@@ -34,6 +38,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
+  //do we need to pass things down from this into editlinkcontainer
   fetch() {
     dispatch(fetchHyperLinkById(props.match.params.id));
   }

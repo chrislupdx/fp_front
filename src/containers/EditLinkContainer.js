@@ -2,27 +2,30 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { editLinkById } from '../actions/patchByIDAction';
-//import form component
+import EditForm from '../components/links/EditDetail';
 
 class EditLinkContainer extends PureComponent {
     static propTypes = {
-      EditLink: PropTypes.func.isRequired
+      EditLink: PropTypes.func.isRequired,
+      id: PropTypes.string,
+      match: PropTypes.object.isRequired
     }
 
     state = {
       url: '',
       name: '',
+      // id: this.match.params.id
     }
 
     handleSubmit = event => {
       event.preventDefault();
       const {
-        url, name
+        url, name,
       } = this.state;
 
       this.props.EditLink({
         url,
-        name
+        name,
       });
 
       this.setState({
@@ -36,16 +39,24 @@ class EditLinkContainer extends PureComponent {
     }
 
     render() {
+      // console.log('render', this.props.id);
       const { url, name } = this.state;
       return (
-        <p>here</p>
+        <EditForm
+          onSubmit={this.handleSubmit}
+          onChange={this.handleChange}
+          url={url}
+          name={name}
+        />
       );
     }
 }
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch, props) => ({
   EditLink(url) {
-    dispatch(editLinkById(url));
+    //your dispatch needs to pass id and body
+    console.log('Map dipsatch', url);
+    dispatch(editLinkById(props.match.params.id, url ));
   }
 });
 
