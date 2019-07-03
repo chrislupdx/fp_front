@@ -5,6 +5,7 @@ import { getHyperLinksList, getHyperLinksLoading, getHyperLinksError } from '../
 import { fetchHyperLinks } from '../actions/fetchHyperLinksAction';
 import List from '../components/links/List';
 import { deleteHyperLinkById } from '../actions/deleteByIdAction';
+import { H1 } from '../styles';
 
 class HyperLinkListContainer extends PureComponent {
   static propTypes = {
@@ -28,7 +29,7 @@ class HyperLinkListContainer extends PureComponent {
 
   render() {
     const { hyperlinkList, loading, deleteHyperLinkById } = this.props;
-    if(loading) return <h1>loading</h1>;
+    if(loading) return <H1>loading...</H1>;
     return <List hyperlinks={hyperlinkList} deleteHyperLinkById={deleteHyperLinkById} />;
   }
 }

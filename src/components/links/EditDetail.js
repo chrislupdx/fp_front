@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormButton, P } from '../../styles';
 
 function EditForm({ onSubmit, onChange, url, name, submitText }) {
   return (
     <form onSubmit={onSubmit}>
-      <span>Edit Name:</span>
+      <P>Edit Name:</P>
       <input name="name" value={name} onChange={onChange} />
-      <span>Edit Url:</span>
+      <P>Edit Url:</P>
       <input name="url" value={url} onChange={onChange} />
-      <button>{submitText}</button>
+      <FormButton>{submitText}</FormButton>
     </form>
   );
 }

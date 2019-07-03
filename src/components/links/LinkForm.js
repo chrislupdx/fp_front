@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormInput, FormButton, SpanStyle } from '../../styles';
 
 function LinkForm({ onSubmit, onChange, url, name, submitText }) {
   return (
     <form onSubmit={onSubmit}>
-      <span>Name:</span>
-      <input name="name" value={name} onChange={onChange} />
-      <span>Url:</span>
-      <input name="url" value={url} onChange={onChange} />
-      <button>{submitText}</button>
+      <SpanStyle>Name:</SpanStyle>
+      <FormInput name="name" value={name} onChange={onChange} />
+      <SpanStyle>Url:</SpanStyle>
+      <FormInput name="url" value={url} onChange={onChange} />
+      <FormButton>{submitText}</FormButton>
     </form>
   );
 }

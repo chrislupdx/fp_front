@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Hyperlink from './hyperLink';
+import { HyperLinkList } from '../../styles';
 
 function List({ hyperlinks, deleteHyperLinkById }) {
   const hyperlinkList = hyperlinks.map(link => (
@@ -10,9 +11,9 @@ function List({ hyperlinks, deleteHyperLinkById }) {
   ));
 
   return (
-    <ul>
+    <HyperLinkList>
       {hyperlinkList}
-    </ul>
+    </HyperLinkList>
   );
 }
 

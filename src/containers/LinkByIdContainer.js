@@ -5,6 +5,7 @@ import { HyperLinkByID } from '../selectors/HLbyIdSelector';
 import LinkDetail from '../components/links/LinkDetail';
 import { fetchHyperLinkById } from '../actions/fetchbyIdAction';
 import EditLinkContainer from '../containers/EditLinkContainer';
+import { Main } from '../styles';
 
 class LinkById extends PureComponent {
     static propTypes = {
@@ -22,13 +23,13 @@ class LinkById extends PureComponent {
     render() {
       const { hyperlink } = this.props;
       return (
-        <>
+        <Main>
           <LinkDetail hyperlink = {hyperlink} />
-          <EditLinkContainer 
-            id ={this.props.match.params.id} 
-            match={this.props.match} 
+          <EditLinkContainer
+            id ={this.props.match.params.id}
+            match={this.props.match}
           />
-        </>
+        </Main>
       );
     }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { P } from '../../styles';
 
 function LinkDetail({ hyperlink }) {
   const {
@@ -10,11 +11,14 @@ function LinkDetail({ hyperlink }) {
 
   return (
     <section>
-      <p>Url: {url}</p>
-      <p>Name: {name}</p>
-      <p>Shortened Url: {`${process.env.API_URL}`}{hashedUrl}</p>
-      {/* <a href={`${process.env.API_URL}${{ hashedUrl }}`}>Click here</a> */}
+      <ul>
+        <P>Url: {url}</P>
+        <P>Name: {name}</P>
+        <P>Shortened Url: {`${process.env.API_URL}`}{hashedUrl}</P>
+        {/* <a href={`${process.env.API_URL}${{ hashedUrl }}`}>Click here</a> */}
+      </ul>
     </section>
+
   );
 }
 
