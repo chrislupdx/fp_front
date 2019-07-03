@@ -9,9 +9,6 @@ describe('by id selector', () => {
         }
       } };
     expect(HyperLinkByID(state)).toEqual({ url: 'poop' }
-    
     );
   });
 });
-
-

@@ -1,6 +1,5 @@
 import { getHyperLinksList } from './HyperLinksSelector';
 
-
 describe('post selectors', () => {
   it('gets all posts', () => {
     const state = {
@@ -10,11 +9,9 @@ describe('post selectors', () => {
           { url: 'two' }
         ]
       } };
-
     expect(getHyperLinksList(state)).toEqual([
       { url: 'one' },
       { url: 'two' },
     ]);
   });
-})
-;
+});
