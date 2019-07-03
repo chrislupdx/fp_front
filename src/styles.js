@@ -9,9 +9,6 @@ padding-right: 20px;
 padding-left: 20px;
 `;
 
-// export const StyledLink = styled.Link`
-// font-family: 'Helvetica'`;
-
 export const H1 = styled.h1`
 font-family: 'Helvetica'
 `;
