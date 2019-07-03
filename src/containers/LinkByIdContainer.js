@@ -39,7 +39,6 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
-  //do we need to pass things down from this into editlinkcontainer
   fetch() {
     dispatch(fetchHyperLinkById(props.match.params.id));
   }

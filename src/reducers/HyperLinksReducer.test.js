@@ -4,7 +4,6 @@ import { POST_HYPERLINK } from '../actions/postHyperLinksAction';
 import { FETCH_HYPERLINK_BY_ID } from '../actions/fetchbyIdAction.js';
 import { DELETE_HYPERLINK_BY_ID } from '../actions/deleteByIdAction';
 import { PATCH_HYPERLINK } from '../actions/patchByIDAction';
-import { deleteHyperLinkById } from '../actions/deleteByIdAction';
 
 jest.mock('../services/LinksApi.js');
 
@@ -70,7 +69,6 @@ describe('hyperlinks reducer tests', () => {
 });
 
 describe('handles the deletes by id reducer', () => {
-  //lowercase words pls
   it('reducer handles the deletebyid action', () => {
     const initialState = {
       hyperlinkList: [
@@ -115,4 +113,3 @@ describe('handles the patch by id reducer', () => {
     });
   });
 });
-

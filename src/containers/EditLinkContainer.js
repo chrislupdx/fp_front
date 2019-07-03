@@ -14,7 +14,6 @@ class EditLinkContainer extends PureComponent {
     state = {
       url: '',
       name: '',
-      // id: this.match.params.id
     }
 
     handleSubmit = event => {
@@ -39,7 +38,6 @@ class EditLinkContainer extends PureComponent {
     }
 
     render() {
-      // console.log('render', this.props.id);
       const { url, name } = this.state;
       return (
         <EditForm
@@ -54,8 +52,6 @@ class EditLinkContainer extends PureComponent {
 
 const mapDispatchToProps = (dispatch, props) => ({
   EditLink(url) {
-    //your dispatch needs to pass id and body
-    console.log('Map dipsatch', url);
     dispatch(editLinkById(props.match.params.id, url ));
   }
 });

@@ -5,7 +5,9 @@ exports[`App component renders App 1`] = `
   <Link
     to="/"
   >
-    Home
+    <styled.p>
+      Home
+    </styled.p>
   </Link>
   <Switch>
     <Route
