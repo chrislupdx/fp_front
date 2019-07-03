@@ -8,11 +8,12 @@ import {
 import Home from '../components/Home';
 import LinkById from '../containers/LinkByIdContainer';
 // import Detail from '../components/Detail';
+import { P } from '../styles';
 
 export default function App() {
   return (
     <Router>
-      <Link to="/">Home</Link>
+      <Link to="/"><P>Home</P></Link>
       <Switch>
         <Route path="/:id" component={LinkById} />
         <Route exact path ="/" component ={Home} />

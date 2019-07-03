@@ -2,13 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { FaTrashAlt } from 'react-icons/fa';
+import { P } from '../../styles'
 
 function HyperLink({ hyperLink, deleteHyperLinkById }) {
   return (
     <section>
       <Link to={`/${hyperLink._id}`}>
-        <p>{hyperLink.name}</p>
-        <p>{hyperLink.url}</p>
+        <P>{hyperLink.name}</P>
+        <P>{hyperLink.url}</P>
       </Link>
       <FaTrashAlt onClick={deleteHyperLinkById.bind(null, hyperLink._id)} />
     </section>
