@@ -8,4 +8,3 @@ export const [
   _,
   DELETE_HYPERLINK_BY_ID_ERROR
 ] = createAction('DELETE_HYPERLINK_BY_ID', deleteLinkById);
-

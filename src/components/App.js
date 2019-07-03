@@ -7,7 +7,6 @@ import {
 } from 'react-router-dom';
 import Home from '../components/Home';
 import LinkById from '../containers/LinkByIdContainer';
-// import Detail from '../components/Detail';
 import { P } from '../styles';
 
 export default function App() {
