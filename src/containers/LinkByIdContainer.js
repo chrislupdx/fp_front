@@ -29,6 +29,7 @@ class LinkById extends PureComponent {
             id ={this.props.match.params.id}
             match={this.props.match}
           />
+
         </Main>
       );
     }

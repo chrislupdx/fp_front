@@ -4,7 +4,6 @@ export const Main = styled.div`
 background-color: #0001;
 position: relative;
 display: flex;
-flex-direction: column;
 padding-right: 20px;
 padding-left: 20px;
 `;

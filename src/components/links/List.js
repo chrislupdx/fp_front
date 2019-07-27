@@ -11,7 +11,7 @@ function List({ hyperlinks, deleteHyperLinkById }) {
   ));
 
   return (
-    <HyperLinkList>
+    <HyperLinkList class="list">
       {hyperlinkList}
     </HyperLinkList>
   );
